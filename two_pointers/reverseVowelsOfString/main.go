@@ -1,5 +1,8 @@
 package main
 
+import "fmt"
+import "strings"
+
 func reverseVowels(s string) string {
 	chars := []byte(s)
     var left int = 0
@@ -39,4 +42,23 @@ func reverseVowels(s string) string {
 	}
 
 	return string(chars)
+}
+
+func main() {
+	// Define test cases
+	testCases := []string{
+        "photosynthesis",
+        "celebrity",
+        "artificial",
+        "intelligence",
+        "Python",
+	}
+
+	// Iterate through each test case and print the result
+	for i, s := range testCases {
+		result := reverseVowels(s)
+		fmt.Printf("%d.\tInput string: \"%s\"\n", i+1, s)
+		fmt.Printf("\tResult: \"%s\"\n", result)
+		fmt.Println(strings.Repeat("-", 100))
+	}
 }
